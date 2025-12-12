@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+  padding-top: 70px;
+}
+
+/* Navbar */
+nav {
+  width: 100%;
+  background: #111;
+  padding: 15px 25px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+nav .brand {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav .links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+nav .links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav .links a:hover {
+  opacity: 0.7;
+}
+
+.login-btn {
+  padding: 6px 14px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* PAGE WRAPPER */
+.page-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title-main {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.title-sub {
+  text-align: center;
+  max-width: 550px;
+  margin: 0 auto 30px;
+  color: #374151;
+  font-size: 14px;
+}
+
+/* CARDS */
+.card {
+  background: #ffffffee;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* GRID */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.col-6 {
+  flex: 1 1 calc(50% - 10px);
+}
+
+.col-12 {
+  flex: 1 1 100%;
+}
+
+/* DIM OVERLAY */
+.dim-overlay {
+  display: inline-block;
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .col-6 {
+    flex: 1 1 100%;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: 5px 0 0 0;
+  }
+}
