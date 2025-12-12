@@ -75,6 +75,63 @@
       color: #111;
     }
 
+    /* Price List Card */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 350px; 
+    margin: auto;
+    box-shadow: 0 0 10px #bbb;
+    margin-top: 30px; /* optional spacing */
+}
+
+.card h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.card p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Individual price rows */
+.price-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background: #eee;
+    border-radius: 8px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.price-row .category {
+    font-weight: bold; 
+    color: #333;
+}
+
+.price-row .price-value {
+    font-weight: bold;
+    color: #007bff; 
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
      /* ---------------- HERO SECTION ---------------- */ 
     .hero {
       margin-top: 70px;
@@ -202,6 +259,41 @@
       color: #6b7280;
     }
 
+    /* Step 1 options hidden by default */
+.step-card .options {
+  display: none;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+/* Each option styling */
+.step-card .option {
+  padding: 8px 10px;
+  background: #f5f5f7;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.step-card .option:hover {
+  background: #e0e0e0;
+}
+
+/* Show options on hover */
+.step-card:hover .options {
+  display: block;
+
+/* Disable steps by default */
+.step-card.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+}
+
+
   </style>
 </head>
 
@@ -253,34 +345,123 @@
 
 <div class="build-container">
 
-  <div class="build-card">
+  <!-- STEP 1 -->
+  <div class="build-card step-card" id="step1-card">
     <img src="https://i0.wp.com/thebridge.jp/en/wp-content/uploads/2019/05/base_pasta_bread.jpg?fit=1240%2C780&ssl=1">
     <div class="build-info">
       <div class="mini-tag">Step 1</div>
       <h6>Choose Base</h6>
       <p>Rice, noodles, pasta, or roti.</p>
+
+      <div class="options">
+        <div class="option">Rice</div>
+        <div class="option">Noodles</div>
+        <div class="option">Pasta</div>
+        <div class="option">Roti</div>
+      </div>
+
+      <p id="step1-selected" style="margin-top:10px; font-weight:600;"></p>
     </div>
   </div>
 
-  <div class="build-card">
+  <!-- STEP 2 -->
+  <div class="build-card step-card disabled" id="step2-card">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLnUM067g-S3JiBZB9I_xcCtw3G5XI2RG_YA&s">
     <div class="build-info">
       <div class="mini-tag">Step 2</div>
       <h6>Add Ingredients</h6>
       <p>Veggies, paneer, chicken, sauces.</p>
+
+      <div class="options">
+        <div class="option">Veggies</div>
+        <div class="option">Paneer</div>
+        <div class="option">Chicken</div>
+        <div class="option">Sauces</div>
+      </div>
+
+      <p id="step2-selected" style="margin-top:10px; font-weight:600;"></p>
     </div>
   </div>
 
-  <div class="build-card">
+  <!-- STEP 3 -->
+  <div class="build-card step-card disabled" id="step3-card">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2dSz_FMlq3OAdcP8yCLimZw2W_tyndjlBYA&s">
     <div class="build-info">
       <div class="mini-tag">Step 3</div>
       <h6>Customize Taste</h6>
       <p>Mild, spicy, cheesy or smoky.</p>
+
+      <div class="options">
+        <div class="option">Mild</div>
+        <div class="option">Spicy</div>
+        <div class="option">Cheesy</div>
+        <div class="option">Smoky</div>
+      </div>
+
+      <p id="step3-selected" style="margin-top:10px; font-weight:600;"></p>
     </div>
   </div>
 
 </div>
+
+<!-- price section -->
+<div class="card">
+  <h1 style="text-align: center;">Price List</h1>
+  <h2>Build your Own Food</h2>
+  <p>Design your meal in three simple steps</p> 
+
+  <div class="price-row">
+      <span class="category">More than 5 items</span>
+      <span class="price-value">300 EG</span>
+  </div>
+  <div class="price-row">
+      <span class="category">More than 6 items</span>
+      <span class="price-value">350 EG</span>
+  </div>
+  <div class="price-row">
+      <span class="category">More than 7 items</span>
+      <span class="price-value">400 EG</span>
+  </div>
+  <div class="price-row">
+      <span class="category">More than 8 items</span>
+      <span class="price-value">450 EG</span>
+  </div>
+  <div class="price-row">
+      <span class="category">More than 9 items</span>
+      <span class="price-value">500 EG</span>
+  </div>
+</div>
+
+  <!-- Dropdown selection -->
+  <script>
+function setupStep(stepCardId, nextStepCardId) {
+  const stepCard = document.getElementById(stepCardId);
+  const options = stepCard.querySelectorAll('.option');
+  const selectedText = stepCard.querySelector('p[id$="-selected"]');
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      // Remove previous selection
+      options.forEach(opt => opt.classList.remove('selected'));
+      option.classList.add('selected');
+
+      // Show selected text
+      selectedText.textContent = "You selected: " + option.textContent;
+
+      // Activate next step if exists
+      if(nextStepCardId) {
+        const nextStep = document.getElementById(nextStepCardId);
+        nextStep.classList.remove('disabled');
+      }
+    });
+  });
+}
+
+// Setup each step
+setupStep('step1-card', 'step2-card');
+setupStep('step2-card', 'step3-card');
+setupStep('step3-card', null);
+</script>
 
 </body>
 </html>
