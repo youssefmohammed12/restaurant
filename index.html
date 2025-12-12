@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Restaurant - Home</title>
+  <link type="image/png" sizes="32x32" rel="icon" href="images/icons8-resturant-32.png">
+
+  <style>
+     /* Basic reset */
+     * { box-sizing: border-box; }
+    html,body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f5f5f7;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+        nav {
+      width: 100%;
+      background: #111;
+      padding: 15px 25px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    nav .brand {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    nav .links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    nav .links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav .links a:hover {
+      opacity: 0.7;
+    }
+
+    .login-btn {
+      padding: 6px 14px;
+      border: 1px solid #fff;
+      color: #fff;
+      background: transparent;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .login-btn:hover {
+      background: #fff;
+      color: #111;
+    }
+
+     /* ---------------- HERO SECTION ---------------- */ 
+    .hero {
+      margin-top: 70px;
+      height: 70vh;
+      background: url("https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: #fff;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      padding: 0 15px;
+    }
+
+    .hero-content h1 {
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hero-content p {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    /* Home Section */
+    .home-section {
+      padding: 120px 20px 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .tag-pill {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #111827;
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .home-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .home-text {
+      font-size: 14px;
+      color: #444;
+      max-width: 380px;
+    }
+
+    .home-img-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+      transition: .3s ease;
+      max-width: 400px;
+    }
+
+    .home-img-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Build Cards */
+    .section {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .build-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .build-card {
+      width: 300px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+
+    .build-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .build-info {
+      padding: 12px 14px;
+    }
+
+    .mini-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6b7280;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  
+  <B><div class="brand"> RESTAURANT </div></B>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="book.html">Book Slot</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="login.html" class="login-btn" style="padding:8px 15px;border:1px solid #fff;border-radius:20px;">Login</a>
+  </div>
+</nav>
+
+<!-- HERO SECTION --> 
+<section class="hero">
+  <div class="hero-content">
+    <h1>Fresh • Custom • Delicious</h1>
+    <p>Build your dish from scratch with ingredients you love.</p>
+  </div>
+</section>
+
+<!-- HOME SECTION -->
+<section class="home-section">
+
+  <div>
+    <div class="tag-pill">Build · Eat · Repeat</div>
+    <h1 class="home-title">Create your own plate.</h1>
+    <p class="home-text">
+      Welcome to Our Restaurant—choose your base, add ingredients, and customize your flavour.
+    </p>
+  </div>
+
+  <div class="home-img-card">
+    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80">
+  </div>
+
+</section>
+
+<!-- BUILD PREVIEW -->
+<section class="section">
+  <h2>Build Your Own Food</h2>
+  <p>Design your meal in three simple steps.</p>
+</section>
+
+<div class="build-container">
+
+  <div class="build-card">
+    <img src="https://i0.wp.com/thebridge.jp/en/wp-content/uploads/2019/05/base_pasta_bread.jpg?fit=1240%2C780&ssl=1">
+    <div class="build-info">
+      <div class="mini-tag">Step 1</div>
+      <h6>Choose Base</h6>
+      <p>Rice, noodles, pasta, or roti.</p>
+    </div>
+  </div>
+
+  <div class="build-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLnUM067g-S3JiBZB9I_xcCtw3G5XI2RG_YA&s">
+    <div class="build-info">
+      <div class="mini-tag">Step 2</div>
+      <h6>Add Ingredients</h6>
+      <p>Veggies, paneer, chicken, sauces.</p>
+    </div>
+  </div>
+
+  <div class="build-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2dSz_FMlq3OAdcP8yCLimZw2W_tyndjlBYA&s">
+    <div class="build-info">
+      <div class="mini-tag">Step 3</div>
+      <h6>Customize Taste</h6>
+      <p>Mild, spicy, cheesy or smoky.</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
