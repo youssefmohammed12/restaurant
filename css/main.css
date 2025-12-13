@@ -140,9 +140,9 @@ nav .links a:hover {
 }
 
 .price-row.option.selected {
-  background: #ff9800;
+  background: rgb(162, 190, 255);
   color: white;
-  border-color: #ff9800;
+  border-color: rgb(162, 190, 255);
 }
 
 /* ---------------- HERO SECTION ---------------- */
