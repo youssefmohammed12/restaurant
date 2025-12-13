@@ -128,32 +128,54 @@
     </div>
 
     <!-- price section -->
-    <div class="card">
+    <div class="card" id="price-card">
       <h1 style="text-align: center">Price List</h1>
       <h2>Build your Own Food</h2>
       <p>Design your meal in three simple steps</p>
 
-      <div class="price-row">
+      <div class="price-row option">
         <span class="category">More than 5 items</span>
         <span class="price-value">300 EG</span>
       </div>
-      <div class="price-row">
+      <div class="price-row option">
         <span class="category">More than 6 items</span>
         <span class="price-value">350 EG</span>
       </div>
-      <div class="price-row">
+      <div class="price-row option">
         <span class="category">More than 7 items</span>
         <span class="price-value">400 EG</span>
       </div>
-      <div class="price-row">
+      <div class="price-row option">
         <span class="category">More than 8 items</span>
         <span class="price-value">450 EG</span>
       </div>
-      <div class="price-row">
+      <div class="price-row option">
         <span class="category">More than 9 items</span>
         <span class="price-value">500 EG</span>
       </div>
+
+      <p id="price-selected" style="margin-top: 10px; font-weight: 600"></p>
     </div>
+
+    <script>
+      // Make price rows selectable
+      const priceCard = document.getElementById("price-card");
+      const priceOptions = priceCard.querySelectorAll(".price-row.option");
+      const priceSelectedText = document.getElementById("price-selected");
+
+      priceOptions.forEach((row) => {
+        row.addEventListener("click", () => {
+          // Remove previous selection
+          priceOptions.forEach((opt) => opt.classList.remove("selected"));
+          row.classList.add("selected");
+
+          // Show selected text
+          const category = row.querySelector(".category").textContent;
+          const value = row.querySelector(".price-value").textContent;
+          priceSelectedText.textContent = `You selected: ${category} - ${value}`;
+        });
+      });
+    </script>
 
     <!-- Dropdown selection -->
     <script>
